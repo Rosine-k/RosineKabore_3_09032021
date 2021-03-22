@@ -1,20 +1,21 @@
 {
-    "name": "ohmyfood",
-    "version": "1.0.0",
-    "description": "Oh my food site",
-    "main": "index.js",
-    "scripts": {
-      "sass": "sass --watch ./sass/main.scss:.public/css/style.css -w --style expanded",
-      "prefix": "postcss ./public/css/style.css --use autoprefixer -d./public/css/prefixed/"
-    },
-    "repository": { 
-      "type": "git",
-      "url": "git+https://github.com/gerkx/maintainable-css-with-sass.git"
-    },
-    "author": "rosine",
-    "license": "ISC",
-    "browserslist": "last 5 versions",
-    "bugs": {
-      "url": "https://github.com/gerkx/maintainable-css-with-sass/issues"
-    },
-    "homepage": "https://github.com/gerkx/maintainable-css-with-sass#readme"
+  "name": "rosinekabore_3_09032021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css --style expanded",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer -d. /public/css/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rosine-k/RosineKabore_3_09032021.git"
+  },
+  "author": "rosine",
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+  "bugs": {
+    "url": "https://github.com/Rosine-k/RosineKabore_3_09032021/issues"
+  },
+  "homepage": "https://github.com/Rosine-k/RosineKabore_3_09032021#readme"
+}
