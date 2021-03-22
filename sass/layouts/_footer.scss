@@ -1,0 +1,57 @@
+ footer {
+     background: $color-bg-footer;
+     width: 100%;
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     right: 0;
+   }
+
+ .footer {
+     display: block;
+     text-align: center;
+     @media screen and (max-width:610px) {
+         display: block; 
+         text-align: left;
+       }  
+        &__title {
+         font-family: "Shrikhand", "sans serif";
+         font-size: 1.3rem;
+         margin-left: 2.5rem;
+         font-weight: 500;
+         color: $color-link-footer;
+         @media screen and (max-width:610px) {
+             margin-left: 2.5rem;  
+           }
+        } 
+        &__list {
+           color: $color-link-footer;
+           list-style-type: none;
+           @include footer-link-properties;     
+        }  
+        &__contact {
+            text-decoration: none;
+            color: $color-link-footer;
+            
+        }
+     
+      li {
+          padding-bottom: 0.5rem;
+      }  
+
+     .fa-utensils, .fa-hands-helping {
+         padding-right: 1em;  
+         @include footer-link-properties; 
+       }
+       @media screen and (max-width:610px) {
+        .fa-hands-helping {
+            padding-right: 0.5rem;
+        }  
+       }
+
+            
+   }
+
+
+
+ 
