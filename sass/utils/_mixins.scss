@@ -1,4 +1,46 @@
-@mixin footer-link-properties {
+ @mixin footer-link-properties {
     font-size: 1rem;
     cursor: pointer;
  }
+
+ @mixin box-shadow-position {
+    -webkit-box-shadow: inset 0 20px 20px -20px rgba(219,219,219,255);
+    -moz-box-shadow: inset 0 20px 20px -20px rgba(219,219,219,255);
+    box-shadow: inset 0 20px 20px -20px rgba(219,219,219,255);
+ }
+
+ @mixin proprieties-title {
+   font-size: 2rem;
+   margin-top: 3rem;
+   margin-bottom: 3rem;
+   font-weight: bold;
+ }
+
+ @mixin buttons {
+   display: block;
+   margin: auto;
+   background-color: $color-button; 
+   border-radius: 2rem;
+   border-color: transparent;
+   cursor: pointer;
+   color: white;
+   font-weight: 600;
+   font-size: 1.2rem;
+   padding: 1rem;
+   margin-top: 2em;
+  }
+
+  @mixin fonctionnement-buttons {
+   border: none;
+   font-size: 1.2rem;
+   font-weight: 600;
+   background-color: $color-secondary;
+   padding-top: 2rem;
+   padding-bottom: 2rem;
+   padding-right: 4rem;
+   padding-left: 4rem;
+   border-radius: 2rem;
+   cursor: pointer;
+   box-shadow: 2px 2px 6px #ececec;
+ }
+
