@@ -14,6 +14,10 @@
 
 <body>
 
+    <div class="loading">
+      <div class="loading__spinner"></div>
+    </div>
+
     <header>
         <div id="logo">
             <img src="images/ohmyfood.png" alt="logo OhMyFood"/>
@@ -41,17 +45,13 @@
 
           <h1 class="fonctionnement__title">Fonctionnement</h1>
 
-          <div class="fonctionnement__buttons">
-             <button class="fonctionnement__button"><i class="fas fa-mobile-alt"></i>Choisissez votre restaurant</button>
-          </div>
+          <ol class="fonctionnement__content">
 
-          <div class="fonctionnement__buttons">
-             <button class="fonctionnement__button"><i class="fas fa-list-ul"></i>Composez votre menu</button>
-          </div>
+             <li class="fonctionnement__vignette"><i class="fas fa-mobile-alt"></i>Choisissez votre restaurant</li>
+             <li class="fonctionnement__vignette"><i class="fas fa-list-ul"></i>Composez votre menu</li>
+             <li class="fonctionnement__vignette fonctionnement__vignette--purple"><i class="fas fa-store"></i>Dégustez au restaurant</li>
 
-          <div class="fonctionnement__buttons">
-             <button class="fonctionnement__button"><i class="fas fa-store"></i>Dégustez au restaurant</button>
-          </div>
+          </0l>
            
        </section>
 
@@ -66,7 +66,7 @@
                         <div class="card__content">
                           <h3 class="card__title">La palette du goût</h3>
                           <p class="card__text">Ménilmontant</p>
-                          <i class="far fa-heart"></i>
+                          <div class="card__heart"><i class="far fa-heart"></i></div>
                         </div>
                    </div>  
                </a>     
@@ -79,7 +79,7 @@
                         <div class="card__content">
                           <h3 class="card__title">La note enchantée</h3>
                           <p class="card__text">Charonne</p>
-                          <i class="far fa-heart"></i>
+                          <div class="card__heart"><i class="far fa-heart"></i></div>
                         </div>
                    </div>  
                </a>     
@@ -92,7 +92,7 @@
                         <div class="card__content">
                           <h3 class="card__title">À la française</h3>
                           <p class="card__text">Cité rouge</p>
-                          <i class="far fa-heart"></i>
+                          <div class="card__heart"><i class="far fa-heart"></i></div>
                         </div>
                    </div>  
                </a>     
@@ -105,7 +105,7 @@
                         <div class="card__content">
                           <h3 class="card__title">Le délice des sens</h3>
                           <p class="card__text">Folie-Méricourt</p>
-                          <i class="far fa-heart"></i>
+                          <div class="card__heart"><i class="far fa-heart"></i></div>
                         </div>
                    </div>  
                </a>     
