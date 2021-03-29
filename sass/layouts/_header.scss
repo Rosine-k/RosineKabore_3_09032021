@@ -4,25 +4,23 @@
   }
 
   header img {
-   width: 25rem;
-   padding-bottom: 2rem;
+    width: 15rem;
+    @media only screen and (min-width : 1224px){
+      header img {
+       width: 25rem;
+       padding-bottom: 2rem;
+     } 
+    }
+    @media only screen and (min-width: 600px) and (max-width: 1200px) {
+     header img {
+       width: 20rem;
+      }
+    }
   } 
-
-  @media screen and (max-width: 610px) {
-    header img {
-      width: 15rem;
-    }
-  }
-
-  @media only screen and (min-width: 600px) and (max-width: 1200px) {
-    header img {
-      width: 20rem;
-    }
-  }
 
   .fa-arrow-left {
      font-size: 2rem;
-     color: $color-bg-footer; 
+     color: $color-primary; 
      position: absolute;
      left: 45px;
      transform: scale(1);

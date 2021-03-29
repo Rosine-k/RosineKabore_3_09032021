@@ -1,0 +1,92 @@
+
+ .heading {
+       &__photo {
+          height: 15rem;
+         width: 100%;
+         object-fit: cover;
+       }
+       @media screen and (min-width : 610px) {
+          height: 30rem;  
+       }
+   }
+
+   .menu {
+       background-color: $color-secondary;
+       border-radius: 8rem 8rem 0 0;
+       padding-bottom: 3.5rem;
+       margin-top: -2rem;
+       &__title {
+           display: flex;
+           margin-left: 2.5rem;
+           align-items: center;
+       }
+       &__restaurant {
+           font-family: "Shrikhand", "sans serif";
+           font-size: 2rem;
+           padding-right: 3rem;
+           @media only screen and (min-width: 610px) {
+               font-size: 3rem;
+           }
+       }
+       &__heart {
+           font-size: 2rem;
+           padding-left: 1.5rem;
+       }
+       &__sections {
+           display: grid;
+           grid-template-columns: 1fr;
+           row-gap: 2rem;
+           column-gap: 2rem;
+           margin-left: 2rem;
+           margin-right: 2rem;
+           margin-bottom: 2rem;
+           @media only screen and (min-width : 1224px){
+             margin-left: 2.5rem;
+             margin-right: 2.5rem;
+             display: grid;
+             grid-template-columns: 1fr 1fr 1fr;
+             column-gap: 2rem;
+            }
+           @media only screen and (min-width: 600px) and (max-width: 1200px) {
+               display: grid;
+               grid-template-columns: 1fr;
+               row-gap: 2rem;
+               column-gap: 2rem;
+               margin-left: 3rem;
+               margin-right: 3rem;
+           }
+       }
+       &__part {
+           font-weight: 300;
+           text-decoration: underline solid $color-green 3px;
+           grid-column: 1/-1; 
+           line-height: 0.5rem;
+       }
+       &__content {
+           background-color: white;
+           border-radius: 1rem;
+           height: 6.5rem;
+           width: 100%;
+           color: black;
+           padding: 0.5rem 0rem 0rem 1rem;
+           box-shadow: 0px 0px 10px #55555538;
+       }
+       &__text {
+         font-weight: 300;
+       }
+       &__prix {
+          font-weight: bold;
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+          margin-top: -2.2rem;
+          padding-right: 1.5rem;
+       }
+   }
+
+   .button-commander {
+     @include buttons;
+     margin-bottom: 2rem;
+   }
+
+
