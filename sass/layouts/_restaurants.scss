@@ -2,11 +2,11 @@
  .heading {
        &__photo {
           height: 15rem;
-         width: 100%;
+          width: 100%;
          object-fit: cover;
        }
        @media screen and (min-width : 610px) {
-          height: 30rem;  
+          height: 150%;  
        }
    }
 
@@ -15,6 +15,12 @@
        border-radius: 8rem 8rem 0 0;
        padding-bottom: 3.5rem;
        margin-top: -2rem;
+       position: relative;
+       top: -3em;
+       @media only screen and (min-width : 1224px) {
+           margin-left: 3rem;
+           margin-right: 3rem;
+       }
        &__title {
            display: flex;
            margin-left: 2.5rem;
@@ -46,6 +52,7 @@
              display: grid;
              grid-template-columns: 1fr 1fr 1fr;
              column-gap: 2rem;
+             max-width: 1400px;
             }
            @media only screen and (min-width: 600px) and (max-width: 1200px) {
                display: grid;
@@ -54,13 +61,23 @@
                column-gap: 2rem;
                margin-left: 3rem;
                margin-right: 3rem;
+               max-width: 1400px;
            }
        }
        &__part {
            font-weight: 300;
-           text-decoration: underline solid $color-green 3px;
            grid-column: 1/-1; 
-           line-height: 0.5rem;
+           padding-bottom: 10px;
+           position: relative;
+           &::after {
+            content: "";
+            width: 3rem;
+            height: 0.25rem;
+            background-color: $color-green;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+          }
        }
        &__content {
            background-color: white;
@@ -70,6 +87,15 @@
            color: black;
            padding: 0.5rem 0rem 0rem 1rem;
            box-shadow: 0px 0px 10px #55555538;
+           &--delay1 {
+               animation: apparition 0.9s ease-in-out both 0.9s;
+           }
+           &--delay2 {
+             animation: apparition 0.9s ease-in-out both 1.6s;
+            }
+            &--delay3 {
+                animation: apparition 0.9s ease-in-out both 2.4s;
+            }
        }
        &__text {
          font-weight: 300;
@@ -81,12 +107,57 @@
           align-items: flex-end;
           margin-top: -2.2rem;
           padding-right: 1.5rem;
+        }
+       &__selection {
+           font-weight: 900;
+           font-size: 2rem;
+           display: inline-block;
+           
+           
+           &:hover { 
+              background-color: $color-green;
+              animation: turn 1s linear reverse;
+              color: white;
+              opacity: 1;
+            }
+       }
+    }
+
+   @keyframes apparition {
+      0% {
+         opacity: 0;
+      }
+      50% {
+         opacity: 0.3;
+      }    
+      100% {
+         opacity: 1;
+      }
+   }
+
+   @keyframes turn {
+       0% {
+          transform: rotate(0deg);
+          
+      }
+      100% {
+         transform: rotate(360deg);
+      }
+   }
+
+   @keyframes appear {
+       0% {
+           transform: scaleX(1)
+       }
+       100% {
+           transform: scaleX(0.5)
        }
    }
 
    .button-commander {
      @include buttons;
-     margin-bottom: 2rem;
+     margin-bottom: 1rem;
    }
 
+   
 

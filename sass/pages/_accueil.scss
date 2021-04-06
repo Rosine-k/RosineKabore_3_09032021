@@ -1,21 +1,27 @@
  .loading {
-    background-color: #e2dfdfa4;
-    height: 1000px;
-    z-index: 9999;
+    background-color: white;
+    height: 75vh;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &__spinner {
-     border-top: 15px solid $color-button;
+     border-top: 15px solid #ff79da;
      border-bottom: 15px solid $color-purple;
      border-left: 15px solid $color-tertiary;
      border-right: 15px solid $color-tertiary;
      border-radius: 50%;
      width: 100px;
      height: 100px;
-     animation: spin 1s  1s linear infinite;
-     transition-duration: 2s;
-     margin: auto;
-     position: fixed;
-     top: 0; left: 0; right: 0; bottom: 0;
+     animation: spin 3s linear;
+     transition-duration: 3s;
     } 
+ }
+
+ .container-page {
+   position: absolute;
+   top: 0px;
+   animation: container-page 0.8s 3.2s ease-in-out both;
  }
    
  @keyframes spin {
@@ -24,8 +30,21 @@
    }
    100% {
      transform: rotate(360deg);
+     opacity: 0;
    }
  }
+
+ @keyframes container-page{
+   0% {
+      opacity: 0;
+   }
+   50% {
+      opacity: 0.3;
+   }    
+   100% {
+      opacity: 1;
+   }
+  }
 
  .position {
     display: flex;
@@ -35,7 +54,6 @@
     color: $color-primary;
     font-size: 1.4rem;
     background-color: $color-tertiary;
-    @include box-shadow-position;
  }
 
  .fa-map-marker-alt {
@@ -77,7 +95,7 @@
       column-gap: 2rem;
       row-gap: 2rem;
       margin-left: 0;
-      @media only screen and (min-width : 1224px){
+      @media only screen and (min-width : 1224px) {
         display: flex;
         align-items: center;
         margin-left: 3rem;
@@ -165,13 +183,14 @@
   .card {
     border-radius: 1.25rem;
     box-shadow: 0px 0px 10px #55555538;
-    cursor: pointer;
     padding-bottom: 2.5rem;
+    position: relative;
     &__image {
       width: 100%;
       height: 15rem;
       object-fit: cover;
       border-radius: 1.25rem 1.25rem 0 0;
+      cursor: pointer;
     }
     &__content {
       padding-left: 1rem;
@@ -181,17 +200,56 @@
     &__text {
       font-weight: 300;
     }
-    &__heart {
+    &__like {
       display: flex;
       justify-content: flex-end;
-      align-items: flex-end;
+      align-items: center;
       margin-top: -4rem;
-      padding-right: 1.5rem;
+      padding-right: 1rem;
       font-size: 2rem;
       font-weight: 100;
+      cursor: pointer;
+    }
+    &__heart {
+     &--animation {
+       color: transparent;
+       position: relative;
+       z-index: 1;  
+       height: 2rem;
+       width: 2rem;
+     }
+     &--transparent {
+       position: absolute;
+       z-index: 2;
+       right: 1rem;
+       &:hover {
+         animation: progress-heart 750ms linear;
+         background-image: linear-gradient(0deg, #9356dc, #ff79da);
+         border-radius: 100%;
+         
+       }
+     }
+    } 
+    &__new {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: $color-green;
+      padding: 0.5rem;
+      color: darken($color: $color-green, $amount: 50%);
+      border-radius: 0.2rem;
     }
  }
 
  a {
    text-decoration: none;
  }
+
+ @keyframes progress-heart {
+   from {
+     background-position: bottom;
+   }  
+   to {
+     background-position: top;
+    }
+  }
