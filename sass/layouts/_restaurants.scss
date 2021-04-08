@@ -107,22 +107,36 @@
           align-items: flex-end;
           margin-top: -2.2rem;
           padding-right: 1.5rem;
+          &:hover {
+            animation: slide 1s ease;
+          }
+          
         }
        &__selection {
            font-weight: 900;
-           font-size: 2rem;
-           display: inline-block;
-           
-           
+           font-size: 1.3rem;
+           width: 2rem;
+           height: 2rem;
+           position: absolute;
+           right: 0.5rem;
+           top: 17rem;
+           opacity: 0;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           background-color: $color-green;
+           color: white;
            &:hover { 
-              background-color: $color-green;
-              animation: turn 1s linear reverse;
-              color: white;
+              animation: turn 0.7s ease-in reverse;
               opacity: 1;
             }
        }
     }
-
+       
+    .fa-check-circle:hover {
+        animation: slide 1s ease;
+    }
+    
    @keyframes apparition {
       0% {
          opacity: 0;
@@ -137,26 +151,26 @@
 
    @keyframes turn {
        0% {
-          transform: rotate(0deg);
-          
+          transform: rotate(0deg);   
       }
       100% {
          transform: rotate(360deg);
       }
    }
 
-   @keyframes appear {
-       0% {
-           transform: scaleX(1)
-       }
+   @keyframes slide {
+        0% {
+         transform: translateX(10px);  
+       } 
        100% {
-           transform: scaleX(0.5)
+         transform: translateX(-70px);
        }
    }
 
    .button-commander {
      @include buttons;
-     margin-bottom: 1rem;
+     margin-bottom: 3.5rem;
+
    }
 
    

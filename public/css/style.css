@@ -208,16 +208,31 @@ header img {
   margin-top: -2.2rem;
   padding-right: 1.5rem;
 }
+.menu__prix:hover {
+  animation: slide 1s ease;
+}
 .menu__selection {
   font-weight: 900;
-  font-size: 2rem;
-  display: inline-block;
+  font-size: 1.3rem;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 17rem;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #99e2d0;
+  color: white;
 }
 .menu__selection:hover {
-  background-color: #99e2d0;
-  animation: turn 1s linear reverse;
-  color: white;
+  animation: turn 0.7s ease-in reverse;
   opacity: 1;
+}
+
+.fa-check-circle:hover {
+  animation: slide 1s ease;
 }
 
 @keyframes apparition {
@@ -239,12 +254,12 @@ header img {
     transform: rotate(360deg);
   }
 }
-@keyframes appear {
+@keyframes slide {
   0% {
-    transform: scaleX(1);
+    transform: translateX(10px);
   }
   100% {
-    transform: scaleX(0.5);
+    transform: translateX(-70px);
   }
 }
 .button-commander {
@@ -262,7 +277,7 @@ header img {
   box-shadow: 1px 1px 6px #7e7e7e;
   transform: scale(1);
   transition: transform 200ms;
-  margin-bottom: 1rem;
+  margin-bottom: 3.5rem;
 }
 .button-commander:hover {
   transform: scale(0.9);
@@ -532,8 +547,8 @@ header img {
 }
 .card__heart--transparent:hover {
   animation: progress-heart 750ms linear;
-  background-image: linear-gradient(0deg, #9356dc, #ff79da);
-  border-radius: 100%;
+  background: -webkit-linear-gradient(175deg, #9356dc, #ff79da);
+  -webkit-text-fill-color: transparent;
 }
 .card__new {
   position: absolute;
