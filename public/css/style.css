@@ -96,18 +96,19 @@ header img {
   object-fit: cover;
 }
 @media screen and (min-width: 610px) {
-  .heading {
-    height: 150%;
+  .heading__photo {
+    height: 25rem;
   }
 }
 
 .menu {
   background-color: #f6f6f6;
-  border-radius: 8rem 8rem 0 0;
+  border-radius: 5rem 5rem 0 0;
   padding-bottom: 3.5rem;
   margin-top: -2rem;
   position: relative;
   top: -3em;
+  padding-top: 1rem;
 }
 @media only screen and (min-width: 1224px) {
   .menu {
@@ -123,25 +124,54 @@ header img {
 .menu__restaurant {
   font-family: "Shrikhand", "sans serif";
   font-size: 2rem;
-  padding-right: 3rem;
+  padding-right: 2rem;
+  font-weight: 600;
+  margin-right: 1rem;
 }
 @media only screen and (min-width: 610px) {
   .menu__restaurant {
     font-size: 3rem;
   }
 }
-.menu__heart {
+.menu__like {
+  cursor: pointer;
+}
+.menu__like:hover .menu__heart--animation1 {
+  opacity: 1;
   font-size: 2rem;
-  padding-left: 1.5rem;
+}
+.menu__like:hover .menu__heart--animation2 {
+  opacity: 0;
+}
+.menu__heart {
+  padding-left: 2rem;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.menu__heart--animation2 {
+  -webkit-transition: all 0.7s ease-in;
+  transition: all 0.7s ease-in;
+  opacity: 1;
+  font-size: 2rem;
+}
+.menu__heart--animation1 {
+  display: initial;
+  -webkit-transition: all 0.6s ease-in;
+  transition: all 0.6s ease-in;
+  background: linear-gradient(175deg, #ff79da, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  font-size: 0.05em;
 }
 .menu__sections {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;
   column-gap: 2rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  margin-bottom: 2rem;
+  margin-left: 3.7rem;
 }
 @media only screen and (min-width: 1224px) {
   .menu__sections {
@@ -180,13 +210,27 @@ header img {
   bottom: 0;
 }
 .menu__content {
+  display: flex;
+  width: 100%;
   background-color: white;
   border-radius: 1rem;
-  height: 6.5rem;
-  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  transition: all 0.5s ease-in-out;
   color: black;
-  padding: 0.5rem 0rem 0rem 1rem;
   box-shadow: 0px 0px 10px #55555538;
+  animation: check 0.5s linear;
+  animation-fill-mode: both;
+}
+.menu__content:hover .menu__description {
+  width: 80%;
+}
+.menu__content:hover .menu__selection {
+  width: 20%;
+}
+.menu__content:hover .fa-check-circle {
+  transform: rotate(360deg);
 }
 .menu__content--delay1 {
   animation: apparition 0.9s ease-in-out both 0.9s;
@@ -197,42 +241,67 @@ header img {
 .menu__content--delay3 {
   animation: apparition 0.9s ease-in-out both 2.4s;
 }
-.menu__text {
-  font-weight: 300;
+@media all and (min-width: 426px) {
+  .menu__content {
+    min-width: 350px;
+    max-width: 350px;
+  }
 }
-.menu__prix {
+.menu__plat {
   font-weight: bold;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  margin-top: -2.2rem;
-  padding-right: 1.5rem;
+  font-size: 1.2rem;
+  padding-left: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
-.menu__prix:hover {
-  animation: slide 1s ease;
+.menu__description {
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+  margin-right: auto;
+  text-overflow: ellipsis;
+}
+.menu__animation {
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: space-between;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu__animation__text {
+  font-weight: 100;
+  font-size: 1.1em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu__animation__price {
+  font-weight: bold;
+  margin-right: 20px;
+  font-size: 1.1rem;
 }
 .menu__selection {
-  font-weight: 900;
-  font-size: 1.3rem;
-  width: 2rem;
-  height: 2rem;
-  position: absolute;
-  right: 0.5rem;
-  top: 17rem;
-  opacity: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #99e2d0;
+  font-size: 1.8rem;
   color: white;
-}
-.menu__selection:hover {
-  animation: turn 0.7s ease-in reverse;
-  opacity: 1;
+  background-color: #99e2d0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  width: 0%;
+  max-width: 90px;
+  height: 100px;
+  transition: all 0.5s ease-in-out;
 }
 
-.fa-check-circle:hover {
-  animation: slide 1s ease;
+.fa-check-circle {
+  opacity: 1;
+  margin: auto;
+  font-size: 2rem;
+  padding-top: 5px;
+  transform: rotate(90deg);
+  transition: all 0.5s ease;
 }
 
 @keyframes apparition {
@@ -246,20 +315,15 @@ header img {
     opacity: 1;
   }
 }
-@keyframes turn {
+@keyframes check {
   0% {
-    transform: rotate(0deg);
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.5;
   }
   100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes slide {
-  0% {
-    transform: translateX(10px);
-  }
-  100% {
-    transform: translateX(-70px);
+    opacity: 1;
   }
 }
 .button-commander {
@@ -519,36 +583,46 @@ header img {
   padding-left: 1rem;
   color: black;
   font-size: 1.2rem;
+  padding-bottom: 2.5rem;
 }
 .card__text {
   font-weight: 300;
 }
 .card__like {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: -4rem;
-  padding-right: 1rem;
-  font-size: 2rem;
-  font-weight: 100;
+  margin-top: -5rem;
+  text-align: end;
+  padding-right: 2rem;
   cursor: pointer;
+  font-weight: 100;
 }
-.card__heart--animation {
-  color: transparent;
-  position: relative;
-  z-index: 1;
-  height: 2rem;
-  width: 2rem;
+.card__like:hover .card__heart--animation1 {
+  opacity: 1;
+  font-size: 2rem;
 }
-.card__heart--transparent {
+.card__like:hover .card__heart--animation2 {
+  opacity: 0;
+}
+.card__heart {
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   position: absolute;
-  z-index: 2;
-  right: 1rem;
 }
-.card__heart--transparent:hover {
-  animation: progress-heart 750ms linear;
-  background: -webkit-linear-gradient(175deg, #9356dc, #ff79da);
+.card__heart--animation2 {
+  -webkit-transition: all 0.7s ease-in;
+  transition: all 0.7s ease-in;
+  opacity: 1;
+  font-size: 2rem;
+}
+.card__heart--animation1 {
+  display: initial;
+  -webkit-transition: all 0.6s ease-in;
+  transition: all 0.6s ease-in;
+  background: linear-gradient(175deg, #ff79da, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  opacity: 0;
+  font-size: 0.05em;
 }
 .card__new {
   position: absolute;
@@ -562,15 +636,6 @@ header img {
 
 a {
   text-decoration: none;
-}
-
-@keyframes progress-heart {
-  from {
-    background-position: bottom;
-  }
-  to {
-    background-position: top;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
