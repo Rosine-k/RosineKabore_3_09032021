@@ -109,6 +109,8 @@ header img {
   position: relative;
   top: -3em;
   padding-top: 1rem;
+  padding-left: 2rem;
+  padding-right: -2.5rem;
 }
 @media only screen and (min-width: 1224px) {
   .menu {
@@ -167,26 +169,24 @@ header img {
   grid-template-columns: 1fr;
   row-gap: 2rem;
   column-gap: 2rem;
-  margin-left: 3.7rem;
+  margin-left: 2rem;
 }
-@media only screen and (min-width: 1224px) {
+@media only screen and (min-width: 1100px) {
   .menu__sections {
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 2rem;
     max-width: 1400px;
   }
 }
-@media only screen and (min-width: 600px) and (max-width: 1200px) {
+@media only screen and (min-width: 700px) and (max-width: 1090px) {
   .menu__sections {
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 2rem;
     column-gap: 2rem;
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
     max-width: 1400px;
   }
 }
