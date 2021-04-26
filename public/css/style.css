@@ -145,22 +145,18 @@ header img {
 }
 .menu__heart {
   padding-left: 2rem;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   position: absolute;
 }
 .menu__heart--animation2 {
-  -webkit-transition: all 0.7s ease-in;
   transition: all 0.7s ease-in;
   opacity: 1;
   font-size: 2rem;
 }
 .menu__heart--animation1 {
   display: initial;
-  -webkit-transition: all 0.6s ease-in;
   transition: all 0.6s ease-in;
   background: linear-gradient(175deg, #ff79da, #9356dc);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
@@ -212,16 +208,14 @@ header img {
 .menu__content {
   display: flex;
   width: 100%;
-  background-color: white;
-  border-radius: 1rem;
-  height: 100px;
+  height: 130px;
   overflow: hidden;
+  color: black;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 1px 2px 5px #c2c2c2;
   margin-bottom: 15px;
   transition: all 0.5s ease-in-out;
-  color: black;
-  box-shadow: 0px 0px 10px #55555538;
-  animation: check 0.5s linear;
-  animation-fill-mode: both;
 }
 .menu__content:hover .menu__description {
   width: 80%;
@@ -247,51 +241,46 @@ header img {
     max-width: 350px;
   }
 }
-.menu__plat {
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding-left: 10px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
 .menu__description {
   width: 100%;
   transition: all 0.5s ease-in-out;
   margin-right: auto;
   text-overflow: ellipsis;
 }
+.menu__plat {
+  font-size: 1.3rem;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .menu__animation {
   display: flex;
   padding-left: 10px;
-  padding-right: 10px;
-  justify-content: space-between;
-  overflow: hidden;
+}
+.menu__text {
+  font-size: 1.1rem;
+  font-weight: 200;
+  margin-right: auto;
   white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
-.menu__animation__text {
-  font-weight: 100;
-  font-size: 1.1em;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.menu__animation__price {
+.menu__price {
+  font-size: 1.1rem;
   font-weight: bold;
   margin-right: 20px;
-  font-size: 1.1rem;
 }
 .menu__selection {
   display: flex;
-  font-size: 1.8rem;
+  background-color: #99E2D0;
   color: white;
-  background-color: #99e2d0;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-radius: 0 12px 12px 0;
+  border: none;
   width: 0%;
   max-width: 90px;
-  height: 100px;
+  height: 130px;
   transition: all 0.5s ease-in-out;
 }
 
@@ -302,6 +291,34 @@ header img {
   padding-top: 5px;
   transform: rotate(90deg);
   transition: all 0.5s ease;
+}
+
+.article {
+  animation: check 0.5s linear;
+  animation-fill-mode: both;
+}
+
+.button-commander {
+  display: block;
+  margin: auto;
+  background-image: linear-gradient(0deg, #9356dc, #ff79da);
+  border-radius: 2rem;
+  border: transparent;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-top: 2em;
+  box-shadow: 1px 1px 6px #7e7e7e;
+  transform: scale(1);
+  transition: transform 200ms;
+  margin-bottom: 3.5rem;
+}
+.button-commander:hover {
+  transform: scale(0.9);
+  box-shadow: 5px 5px 10px #7e7e7e;
+  background-image: linear-gradient(0deg, #9d70d3, #e68ecd);
 }
 
 @keyframes apparition {
@@ -326,29 +343,6 @@ header img {
     opacity: 1;
   }
 }
-.button-commander {
-  display: block;
-  margin: auto;
-  background-image: linear-gradient(0deg, #9356dc, #ff79da);
-  border-radius: 2rem;
-  border: transparent;
-  cursor: pointer;
-  color: white;
-  font-weight: 500;
-  font-size: 1.2rem;
-  padding: 1rem;
-  margin-top: 2em;
-  box-shadow: 1px 1px 6px #7e7e7e;
-  transform: scale(1);
-  transition: transform 200ms;
-  margin-bottom: 3.5rem;
-}
-.button-commander:hover {
-  transform: scale(0.9);
-  box-shadow: 5px 5px 10px #7e7e7e;
-  background-image: linear-gradient(0deg, #9d70d3, #e68ecd);
-}
-
 .loading {
   background-color: white;
   height: 75vh;
@@ -375,26 +369,6 @@ header img {
   animation: container-page 0.8s 3.2s ease-in-out both;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-    opacity: 0;
-  }
-}
-@keyframes container-page {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.3;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 .position {
   display: flex;
   font-weight: bold;
@@ -603,22 +577,18 @@ header img {
   opacity: 0;
 }
 .card__heart {
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   position: absolute;
 }
 .card__heart--animation2 {
-  -webkit-transition: all 0.7s ease-in;
   transition: all 0.7s ease-in;
   opacity: 1;
   font-size: 2rem;
 }
 .card__heart--animation1 {
   display: initial;
-  -webkit-transition: all 0.6s ease-in;
   transition: all 0.6s ease-in;
   background: linear-gradient(175deg, #ff79da, #9356dc);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
@@ -636,6 +606,27 @@ header img {
 
 a {
   text-decoration: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+@keyframes container-page {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

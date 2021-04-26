@@ -1,18 +1,18 @@
- @mixin footer-link-properties {
+  @mixin footer-link-properties {
     font-size: 1rem;
     cursor: pointer;
- }
+  }
 
- @mixin box-shadow-position {
+  @mixin box-shadow-position {
    box-shadow: 5px 5px 10px $color-icone;
- }
+  }
 
- @mixin proprieties-title {
+  @mixin proprieties-title {
    font-size: 2rem;
    margin-top: 3rem;
    margin-bottom: 3rem;
    font-weight: bold;
- }
+  }
 
  @mixin buttons {
    display: block;
@@ -29,11 +29,11 @@
    box-shadow: 1px 1px 6px $color-icone;
    transform: scale(1);
    transition: transform 200ms;
-   &:hover {
+    &:hover {
       transform: scale(0.9);
       box-shadow: 5px 5px 10px $color-icone;
       background-image: linear-gradient(0deg, #9d70d3, #e68ecd);
-   }
+    }
   }
 
   @mixin fonctionnement-vignette {
@@ -47,5 +47,41 @@
    padding-left: 4rem;
    border-radius: 2rem;
    box-shadow: 1px 1px 10px #b8b4b4;
- }
+  }
+
+  @mixin border-loadingspinner {
+    border-top: 15px solid $color-pink;
+    border-bottom: 15px solid $color-purple;
+    border-left: 15px solid $color-tertiary;
+    border-right: 15px solid $color-tertiary;
+    border-radius: 50%;
+  }
+
+  @mixin proprieties-restaurant {
+    column-gap: 2rem;
+    grid-row-gap: 2rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    background-color: $color-secondary;
+    padding-bottom: 6rem;
+    padding-top: 2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  @mixin animation2 {
+    transition: all 0.7s ease-in;
+    opacity: 1;
+    font-size: 2rem;
+  }
+
+  @mixin animation1 {
+    display: initial;
+    transition: all 0.6s ease-in;
+    background: linear-gradient(175deg, $color-pink, $color-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    font-size: 0.05em;
+  }
 
