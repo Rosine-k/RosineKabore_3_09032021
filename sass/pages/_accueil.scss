@@ -1,31 +1,24 @@
  .loading {
-    background-color: #e2dfdfa4;
-    height: 1000px;
-    z-index: 9999;
+    background-color: white;
+    height: 75vh;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &__spinner {
-     border-top: 15px solid $color-button;
-     border-bottom: 15px solid $color-purple;
-     border-left: 15px solid $color-tertiary;
-     border-right: 15px solid $color-tertiary;
-     border-radius: 50%;
+     @include border-loadingspinner;
      width: 100px;
      height: 100px;
-     animation: spin 1s  1s linear infinite;
-     transition-duration: 2s;
-     margin: auto;
-     position: fixed;
-     top: 0; left: 0; right: 0; bottom: 0;
+     animation: spin 3s linear;
+     transition-duration: 3s;
     } 
- }
-   
- @keyframes spin {
-   0% {
-     transform: rotate(0deg);
-   }
-   100% {
-     transform: rotate(360deg);
-   }
- }
+  }
+
+ .container-page {
+   position: absolute;
+   top: 0px;
+   animation: container-page 0.8s 3.2s ease-in-out both;
+  }
 
  .position {
     display: flex;
@@ -35,12 +28,11 @@
     color: $color-primary;
     font-size: 1.4rem;
     background-color: $color-tertiary;
-    @include box-shadow-position;
- }
+  }
 
  .fa-map-marker-alt {
-  padding-right: 1.5rem;
- }
+   padding-right: 1.5rem;
+  }
 
  .explorer {
    background-color: $color-secondary;
@@ -52,7 +44,7 @@
      padding-top: 2rem;
      font-size: 2rem;
      margin: 1rem;
-   }
+    }
     &__subtitle {
       font-weight: 300;
       text-align: center;
@@ -64,7 +56,7 @@
         opacity: 1;
       }
     }
- }
+  }
  
  .fonctionnement {
     &__title {
@@ -77,13 +69,13 @@
       column-gap: 2rem;
       row-gap: 2rem;
       margin-left: 0;
-      @media only screen and (min-width : 1224px){
+      @media only screen and (min-width : 1224px) {
         display: flex;
         align-items: center;
         margin-left: 3rem;
         margin-bottom: 5rem;
         counter-reset: fonctions; 
-     }
+      }
       @media only screen and (min-width: 600px) and (max-width: 1200px) {
         display: grid;
         grid-template-columns: 1fr;
@@ -117,8 +109,7 @@
         margin-right: -0.7rem;
       }
       &--purple {
-        background-color: #f5edff;
-        
+        background-color: $color-vignette;  
       }
     }
   }  
@@ -130,8 +121,6 @@
      padding-right: 1.5rem;
      color: $color-icone;
     }
-   
-   
   }
 
   .fa-store {
@@ -141,15 +130,7 @@
  .restaurant {
    display: grid;
    grid-template-columns: 1fr;
-   column-gap: 2rem;
-   grid-row-gap: 2rem;
-   margin-left: 0rem;
-   margin-right: 0rem;
-   background-color: $color-secondary;
-   padding-bottom: 6rem;
-   padding-top: 2rem;
-   padding-right: 2rem;
-   padding-left: 2rem;
+   @include proprieties-restaurant;
    @media only screen and (min-width : 610px) {
      display: grid;
      grid-template-columns: 1fr 1fr;
@@ -158,40 +139,87 @@
      grid-column: 1/-1; 
      cursor: pointer;
      @include proprieties-title;
-   }
-
+    }
   }
 
   .card {
     border-radius: 1.25rem;
-    box-shadow: 0px 0px 10px #55555538;
-    cursor: pointer;
+    box-shadow: 0px 0px 10px $color-shadow;
     padding-bottom: 2.5rem;
+    position: relative;
     &__image {
       width: 100%;
       height: 15rem;
       object-fit: cover;
       border-radius: 1.25rem 1.25rem 0 0;
+      cursor: pointer;
     }
     &__content {
       padding-left: 1rem;
       color: black;
-     font-size: 1.2rem;
+      font-size: 1.2rem;
+      padding-bottom: 2.5rem;
     }
     &__text {
-      font-weight: 300;
+     font-weight: 300;
+    }
+    &__like {
+     margin-top: -5rem;
+     text-align: end;
+     padding-right: 2rem;
+     cursor: pointer;
+     font-weight: 100;
+      &:hover .card__heart--animation1 {
+       opacity: 1;
+       font-size: 2rem;
+      }
+      &:hover .card__heart--animation2 {
+       opacity: 0;
+      }
     }
     &__heart {
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-end;
-      margin-top: -4rem;
-      padding-right: 1.5rem;
-      font-size: 2rem;
-      font-weight: 100;
+     transform: translate(-50%, -50%);
+     position: absolute;
+      &--animation2 {
+        @include animation2;
+      }
+      &--animation1 {
+        @include animation1;
+      }
+    } 
+    &__new {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: $color-green;
+      padding: 0.5rem;
+      color: darken($color: $color-green, $amount: 50%);
+      border-radius: 0.2rem;
     }
- }
+  }
 
- a {
+  a {
    text-decoration: none;
- }
+  }
+
+  @keyframes spin {
+   0% {
+     transform: rotate(0deg);
+   }
+   100% {
+     transform: rotate(360deg);
+     opacity: 0;
+    }
+  }
+
+  @keyframes container-page{
+    0% {
+     opacity: 0;
+    }
+    50% {
+     opacity: 0.3;
+    }    
+    100% {
+     opacity: 1;
+    }
+  }
