@@ -104,6 +104,9 @@
       @media only screen and (min-width: 600px) {
         width: 320px;
       }
+      @media only screen and (min-width: 250px) and (max-width: 375px) {
+        width: 100px;
+      }
       /* numerotation */
       &:before {
         content: counter(fonctions);
@@ -167,6 +170,11 @@
       color: black;
       font-size: 1.2rem;
       padding-bottom: 2.5rem;
+    }
+    &__title {
+      @media only screen and (min-width: 250px) and (max-width: 280px) {
+        font-size: 1.15rem;
+      }
     }
     &__text {
      font-weight: 300;

@@ -162,8 +162,28 @@ header img {
     padding-right: 4rem;
   }
 }
+@media only screen and (min-width: 530px) {
+  .menu__restaurant {
+    padding-right: 12rem;
+  }
+}
 .menu__restaurant--space {
   padding-right: 4.7rem;
+}
+@media only screen and (min-width: 250px) and (max-width: 325px) {
+  .menu__restaurant--space {
+    padding-right: 2rem;
+  }
+}
+@media only screen and (min-width: 410px) and (max-width: 450px) {
+  .menu__restaurant--space {
+    padding-right: 6.5rem;
+  }
+}
+@media only screen and (min-width: 530px) {
+  .menu__restaurant--space {
+    padding-right: 15rem;
+  }
 }
 @media only screen and (min-width: 610px) {
   .menu__restaurant {
@@ -536,6 +556,11 @@ header img {
     width: 320px;
   }
 }
+@media only screen and (min-width: 250px) and (max-width: 375px) {
+  .fonctionnement__vignette {
+    width: 100px;
+  }
+}
 .fonctionnement__vignette:before {
   content: counter(fonctions);
   color: white;
@@ -614,6 +639,11 @@ header img {
   color: black;
   font-size: 1.2rem;
   padding-bottom: 2.5rem;
+}
+@media only screen and (min-width: 250px) and (max-width: 280px) {
+  .card__title {
+    font-size: 1.15rem;
+  }
 }
 .card__text {
   font-weight: 300;
