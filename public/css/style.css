@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   color: black;
   font-family: "Roboto", "sans serif";
@@ -91,6 +92,7 @@ header img {
   transform: scale(1.15);
 }
 
+/* photo en tête restaurant */
 .heading__photo {
   height: 15rem;
   width: 100%;
@@ -103,9 +105,10 @@ header img {
   }
 }
 
+/* menu page restaurant */
 .menu {
   background-color: #f6f6f6;
-  border-radius: 5rem 5rem 0 0;
+  border-radius: 3rem 3rem 0 0;
   padding-bottom: 3.5rem;
   margin-top: -2rem;
   position: relative;
@@ -121,15 +124,19 @@ header img {
 }
 .menu__title {
   display: flex;
-  margin-left: 0.7rem;
+  margin-left: 0.4rem;
   align-items: center;
 }
+/* nom du restaurant */
 .menu__restaurant {
   font-family: "Shrikhand", "sans serif";
   font-size: 1.5rem;
-  padding-right: 1.2rem;
-  font-weight: 600;
+  padding-right: 1.7rem;
+  font-weight: 500;
   margin-right: 1rem;
+}
+.menu__restaurant--space {
+  padding-right: 4.7rem;
 }
 @media only screen and (min-width: 610px) {
   .menu__restaurant {
@@ -146,6 +153,7 @@ header img {
 .menu__like:hover .menu__heart--animation2 {
   opacity: 0;
 }
+/* animation du coeur */
 .menu__heart {
   padding-left: 2rem;
   transform: translate(-50%, -50%);
@@ -191,12 +199,15 @@ header img {
     max-width: 1400px;
   }
 }
+/* entrée plat dessert */
 .menu__part {
   font-weight: 300;
   grid-column: 1/-1;
   padding-bottom: 10px;
   position: relative;
+ 
 }
+ /* sous-lignage */
 .menu__part::after {
   content: "";
   width: 3rem;
@@ -218,7 +229,7 @@ header img {
   margin-bottom: 15px;
   transition: all 0.5s ease-in-out;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto;  
 }
 .menu__content:hover .menu__description {
   width: 80%;
@@ -229,6 +240,7 @@ header img {
 .menu__content:hover .fa-check-circle {
   transform: rotate(360deg);
 }
+/* animation apparition des vignettes */
 .menu__content--delay1 {
   animation: apparition 0.9s ease-in-out both 0.9s;
 }
@@ -244,12 +256,14 @@ header img {
     max-width: 300px;
   }
 }
+/* conteneur description du plat */
 .menu__description {
   width: 100%;
   transition: all 0.5s ease-in-out;
   margin-right: auto;
   text-overflow: ellipsis;
 }
+/* titre du plat */
 .menu__plat {
   font-size: 1.3rem;
   padding-bottom: 8px;
@@ -262,6 +276,7 @@ header img {
   display: flex;
   padding-left: 10px;
 }
+/* complement informations plat */
 .menu__text {
   font-size: 1.1rem;
   font-weight: 200;
@@ -275,6 +290,7 @@ header img {
   font-weight: bold;
   margin-right: 20px;
 }
+/* conteneur du coche */
 .menu__selection {
   display: flex;
   background-color: #99E2D0;
@@ -287,6 +303,7 @@ header img {
   transition: all 0.5s ease-in-out;
 }
 
+/* animation du coche */
 .fa-check-circle {
   opacity: 1;
   margin: auto;
@@ -296,15 +313,17 @@ header img {
   transition: all 0.5s ease;
 }
 
+/* conteneur vignettes menu */
 .article {
   animation: check 0.5s linear;
   animation-fill-mode: both;
 }
 
+/* bouton commander */
 .button-commander {
   display: block;
   margin: auto;
-  background-image: linear-gradient(0deg, #9356dc, #ff79da);
+  background: linear-gradient(175deg, #ff79da, #9356dc);
   border-radius: 2rem;
   border: transparent;
   cursor: pointer;
@@ -314,16 +333,15 @@ header img {
   padding: 1rem;
   margin-top: 2em;
   box-shadow: 1px 1px 6px #7e7e7e;
-  transform: scale(1);
   transition: transform 200ms;
   margin-bottom: 3.5rem;
 }
 .button-commander:hover {
-  transform: scale(0.9);
   box-shadow: 5px 5px 10px #7e7e7e;
-  background-image: linear-gradient(0deg, #9d70d3, #e68ecd);
+  background: linear-gradient(175deg, #ff79de, #b25dc4);
 }
 
+/* apparition des vignettes entrée plat dessert */
 @keyframes apparition {
   0% {
     opacity: 0;
@@ -335,6 +353,7 @@ header img {
     opacity: 1;
   }
 }
+/* apparition de l'icone check */
 @keyframes check {
   0% {
     opacity: 0;
@@ -369,10 +388,12 @@ header img {
   opacity: 0;
 }
 
+/* page cachée lors du loading spinner */
 .container-page {
   animation: container-page 0.8s 3.2s ease-in-out both;
 }
 
+/* localisation */
 .position {
   display: flex;
   font-weight: bold;
@@ -396,6 +417,7 @@ header img {
   padding-bottom: 4.5rem;
   margin-left: auto;
   margin-right: auto;
+  
 }
 .explorer__title {
   font-weight: bold;
@@ -410,10 +432,11 @@ header img {
   color: #3b3b3b;
   margin: 2rem;
 }
+/* bouton explorer*/
 .explorer__button {
   display: block;
   margin: auto;
-  background-image: linear-gradient(0deg, #9356dc, #ff79da);
+  background: linear-gradient(175deg, #ff79da, #9356dc);
   border-radius: 2rem;
   border: transparent;
   cursor: pointer;
@@ -423,13 +446,11 @@ header img {
   padding: 1rem;
   margin-top: 2em;
   box-shadow: 1px 1px 6px #7e7e7e;
-  transform: scale(1);
   transition: transform 200ms;
 }
 .explorer__button:hover {
-  transform: scale(0.9);
   box-shadow: 5px 5px 10px #7e7e7e;
-  background-image: linear-gradient(0deg, #9d70d3, #e68ecd);
+  background: linear-gradient(175deg, #ff79de, #b25dc4);
 }
 .explorer__button:hover {
   opacity: 1;
@@ -479,12 +500,17 @@ header img {
   counter-increment: fonctions;
   margin: auto;
   width: 60%;
+  font-size: 0.9rem;
+}
+.fonctionnement__vignette:hover {
+  background-color: #f5edff;
 }
 @media only screen and (min-width: 600px) {
   .fonctionnement__vignette {
     width: 320px;
   }
 }
+/* numerotation */
 .fonctionnement__vignette:before {
   content: counter(fonctions);
   color: white;
@@ -498,9 +524,6 @@ header img {
   position: relative;
   left: -4.5rem;
   margin-right: -0.7rem;
-}
-.fonctionnement__vignette--purple {
-  background-color: #f5edff;
 }
 
 .fa-mobile-alt, .fa-list-ul, .fa-store {
@@ -518,6 +541,7 @@ header img {
   color: #9356dc;
 }
 
+/* présentation des restaurants */
 .restaurant {
   display: grid;
   grid-template-columns: 1fr;
@@ -546,6 +570,7 @@ header img {
   font-weight: bold;
 }
 
+/* carte des differents restaurants */
 .card {
   border-radius: 1.25rem;
   box-shadow: 0px 0px 10px #55555538;
@@ -568,6 +593,7 @@ header img {
 .card__text {
   font-weight: 300;
 }
+ /* animation du coeur */
 .card__like {
   margin-top: -5rem;
   text-align: end;
@@ -600,6 +626,7 @@ header img {
   opacity: 0;
   font-size: 0.05em;
 }
+/* encart nouveau */
 .card__new {
   position: absolute;
   top: 1rem;
@@ -614,6 +641,7 @@ a {
   text-decoration: none;
 }
 
+/* rotation loading spinner */
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -623,6 +651,7 @@ a {
     transform: rotate(360deg);
   }
 }
+/* apparition de la page */
 @keyframes container-page {
   0% {
     opacity: 0;
