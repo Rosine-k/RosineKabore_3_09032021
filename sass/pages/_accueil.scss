@@ -73,6 +73,9 @@
     &__title {
      @include proprieties-title;
      margin-left: 2rem; 
+     @media only screen and (min-width: 250px) and (max-width: 375px) {
+       font-size: 1.4rem;
+     }
     }
     &__content {
       display: grid;
@@ -97,15 +100,23 @@
       counter-increment: fonctions;
       margin: auto;
       width: 60%;
+      
       font-size: 0.9rem;
+      text-align: center;
       &:hover {
         background-color: $color-vignette; 
       }
-      @media only screen and (min-width: 600px) {
-        width: 320px;
+      &:hover .fonctionnement__vignette--icone {
+        color: $color-purple;
+      }
+      @media only screen and (min-width: 540px) {
+        min-width: 200px;
+        max-width: 200px;
       }
       @media only screen and (min-width: 250px) and (max-width: 375px) {
         width: 100px;
+        font-size: 0.5rem;
+        font-weight: 600;
       }
       /* numerotation */
       &:before {
@@ -121,6 +132,10 @@
         position: relative;
         left: -4.5rem;
         margin-right: -0.7rem;
+        @media only screen and (min-width: 250px) and (max-width: 375px) {
+          height: 1.2rem;
+          width: 1.4rem;
+        }
       }
     }
   }  
@@ -128,14 +143,11 @@
  .fa-mobile-alt, .fa-list-ul, .fa-store {
    margin-left: -2rem;
    padding-right: 1rem;
+   color: $color-icone;
    @media only screen and (min-width : 610px){
      padding-right: 1.5rem;
-     color: $color-icone;
+     
     }
-  }
-
-  .fa-store {
-    color: $color-purple;
   }
  
  .restaurant {
@@ -150,6 +162,9 @@
      grid-column: 1/-1; 
      cursor: pointer;
      @include proprieties-title;
+     @media only screen and (min-width: 250px) and (max-width: 375px) {
+       font-size: 1.4rem;
+     }
     }
   }
 
@@ -172,12 +187,15 @@
       padding-bottom: 2.5rem;
     }
     &__title {
-      @media only screen and (min-width: 250px) and (max-width: 280px) {
+      @media only screen and (min-width: 250px) and (max-width: 375px) {
         font-size: 1.15rem;
       }
     }
     &__text {
      font-weight: 300;
+     @media only screen and (min-width: 250px) and (max-width: 375px) {
+       font-size: 1.15;
+     }
     }
     /* animation du coeur */
     &__like {
