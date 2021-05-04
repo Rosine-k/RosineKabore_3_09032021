@@ -267,10 +267,22 @@ header img {
     max-width: 300px;
   }
 }
+@media only screen and (min-width: 520px) and (max-width: 600px) {
+  .menu__content {
+    min-width: 400px;
+    max-width: 400px;
+  }
+}
 @media only screen and (min-width: 250px) and (max-width: 330px) {
   .menu__content {
     min-width: 220px;
     max-width: 220px;
+  }
+}
+@media all and (min-width: 1000px) {
+  .menu__content {
+    min-width: 400px;
+    max-width: 400px;
   }
 }
 .menu__description {

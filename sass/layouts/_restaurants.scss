@@ -147,11 +147,18 @@
         min-width: 300px;
         max-width: 300px;
       }
+      @media only screen and (min-width: 520px) and (max-width: 600px) {
+        min-width: 400px;
+        max-width: 400px;
+      }
       @media only screen and (min-width: 250px) and (max-width: 330px) {
         min-width: 220px;
         max-width: 220px;
       }
-     
+      @media all and (min-width: 1000px) {
+        min-width: 400px;
+        max-width: 400px;
+      }
     }
     /* conteneur description du plat */  
     &__description {
