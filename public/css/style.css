@@ -537,7 +537,7 @@ header img {
 .fonctionnement__vignette:hover .fonctionnement__vignette--icone {
   color: #9356dc;
 }
-@media only screen and (min-width: 540px) and (max-width: 650px) {
+@media only screen and (min-width: 540px) and (max-width: 749px) {
   .fonctionnement__vignette {
     width: 70%;
     justify-content: space-evenly;
