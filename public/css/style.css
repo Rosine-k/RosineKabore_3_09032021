@@ -277,7 +277,7 @@ header img {
     max-width: 260px;
   }
 }
-@media only screen and (min-width: 410px) and (max-width: 700px) {
+@media only screen and (min-width: 410px) and (max-width: 600px) {
   .menu__content {
     min-width: 330px;
     max-width: 330px;
